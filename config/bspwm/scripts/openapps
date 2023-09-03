@@ -1,0 +1,102 @@
+#!/usr/bin/env bash
+# From here you can control your favorite applications for all themes.
+
+case "$1" in
+    --launcher)
+        rofi -show drun \
+        -theme "$HOME"/.config/bspwm/scripts/launcher/style.rasi
+    ;;
+    
+    --clip)
+        "$HOME"/.config/bspwm/scripts/clip.sh
+    ;;
+    
+    --lvim)
+        alacritty -e "$HOME"/.local/bin/lvim
+    ;;
+    
+    --hdd)
+        alacritty --hold --class FloaTerm,Alacritty \
+        -o window.dimensions.lines=22 \
+        window.dimensions.columns=90 \
+        -e bash -c "echo tami | sudo -S "$HOME"/.scripts/HDSentinel"
+    ;;
+    
+    --terminal)
+        alacritty
+    ;;
+    
+    --floating)
+        alacritty --class FloaTerm,Alacritty \
+        -o window.dimensions.lines=22 \
+        window.dimensions.columns=90
+    ;;
+    
+    --update)
+        alacritty --hold --class FloaTerm,Alacritty \
+        -o window.dimensions.lines=22 \
+        window.dimensions.columns=90 \
+        -e Updates --update-system
+    ;;
+    
+    --checkupdates)
+        alacritty --hold --class Updating,Alacritty \
+        -o window.dimensions.lines=22 \
+        window.dimensions.columns=80 \
+        -e Updates --print-updates
+    ;;
+    
+    --ranger)
+        alacritty --class FloaTerm,Alacritty \
+        -o window.dimensions.lines=14 \
+        window.dimensions.columns=90 \
+        -e ranger
+    ;;
+    
+    --nvim)
+        alacritty -e nvim
+    ;;
+    
+    --rice)
+        RiceSelector
+    ;;
+    
+    --music)
+        alacritty --class FloaTerm,Alacritty \
+        -o window.dimensions.lines=18 \
+        window.dimensions.columns=67 \
+        -e ncmpcpp
+    ;;
+    
+    --fetch)
+        alacritty --hold --class FloaTerm,Alacritty \
+        -o window.dimensions.lines=26 \
+        window.dimensions.columns=40 \
+        -e ~/.local/bin/sysfetch
+    ;;
+    
+    #Apps
+    --filemanager)
+        thunar
+    ;;
+    
+    --browser)
+        firefox-esr
+    ;;
+    
+    --editor)
+        geany
+    ;;
+    
+    --telegram)
+        telegram-desktop
+    ;;
+    
+    --soundcontrol)
+        pavucontrol
+    ;;
+    
+    *)
+        echo "app tidak ada"
+    ;;
+esac

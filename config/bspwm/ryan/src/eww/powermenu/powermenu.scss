@@ -1,0 +1,27 @@
+.powermenu {
+  background-color: $bg;
+  color: $fg;
+  padding: 20px;
+  font-family: Iosevka Nerd Font;
+  font-size: 70px;
+  border-radius: 16px;
+  button {
+    border-radius: 12px;
+    transition: all ease .2s;
+    &:hover { background-color: $bgSecondary; }
+    &:active { background-color: $bg; }
+    .content {
+      border-radius: 4px;
+      padding: 0px 4px 0px 4px;
+    }
+  }
+  .shutdown { color: $red; }
+  .reboot { color: $magenta; }
+  .logout { color: $yellow; }
+  .lock { color: $green; }
+  .suspend { color: $blue; }
+}
+
+.powermenu-clickhandler {
+  background-color: transparent;
+}

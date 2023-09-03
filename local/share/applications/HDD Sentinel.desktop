@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Hdd Sentinel
+Icon=~/.config/bspwm/assets/harddisk.svg
+Terminal=false
+Exec=openapps --hdd
+#Exec=termite --hold -e zfetch

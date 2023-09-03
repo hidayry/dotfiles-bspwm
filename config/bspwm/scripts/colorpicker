@@ -1,0 +1,16 @@
+#!/bin/bash
+TEMP_DIR=/tmp/xcolor
+HEX_COLOR=$(gpick -pso --no-newline)
+
+mkdir -p $TEMP_DIR
+
+HEX="${HEX_COLOR#\#}"
+FNAME="$TEMP_DIR/$HEX.png"
+
+convert -size 100x100 xc:"$HEX_COLOR" "$FNAME"
+
+COLOR_CODE="$HEX_COLOR"
+
+echo "$COLOR_CODE" | xclip -sel c
+
+dunstify -u normal -a "Colorpicker" -i "$FNAME" $COLOR_CODE "Copied to clipboard"

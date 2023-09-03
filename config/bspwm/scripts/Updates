@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+get_total_updates() {
+  local total_updates=$(apt-get upgrade -s |grep -P '^\d+ upgraded'|cut -d" " -f1 || echo 0)
+  echo "${total_updates:-0}"
+}
+
+get_list_updates() {
+  echo -e "\e[1m\e[34mRegular updates:\e[0m"
+  nala list --upgradable | sed 's/->/\x1b[32;1m\x1b[0m/g'
+}
+
+print_updates() {
+  local print_updates=$(get_total_updates)
+
+  if [[ "$print_updates" -gt 0 ]]; then
+    echo -e "\e[1m\e[33mThere are $print_updates updates available:\e[0m\n"
+    get_list_updates
+  else
+    echo -e "\e[1m\e[32mYour system is already updated!\e[0m"
+  fi
+}
+
+update_system() {
+  sudo nala update && sudo nala upgrade
+}
+
+case "$1" in
+  --get-updates) get_total_updates;;
+  --get-list-updates) get_list_updates;;
+  --print-updates) print_updates;;
+  --update-system) update_system;;
+  --help|*) echo -e "Updates [options]
+
+Options:
+  --get-updates        Get the number of updates available.
+  --print-updates      Print the available package updates.
+  --update-system      Update your system.\n"
+esac
+

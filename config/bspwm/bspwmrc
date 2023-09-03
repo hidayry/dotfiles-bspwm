@@ -1,0 +1,107 @@
+#!/usr/bin/env bash
+
+
+## Fix java applications
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+workspaces() {
+    name=1
+    for monitor in $(bspc query -M); do
+        bspc monitor "${monitor}" -n "$name" -d '1' '2' '3' '4' '5' '6' '7' '8'
+        ((name++))
+    done
+}
+
+workspaces
+
+bspc config external_rules_command "$HOME"/.config/bspwm/scripts/ExternalRules
+bspc config border_width 0
+bspc config top_padding 40
+bspc config bottom_padding 2
+bspc config normal_border_color "#414868"
+bspc config active_border_color "#c0caf5"
+bspc config focused_border_color "#bb9af7"
+bspc config presel_feedback_color "#7aa2f7"
+bspc config left_padding 2
+bspc config right_padding 2
+bspc config window_gap 8
+
+bspc config split_ratio 0.55
+bspc config single_monocle true
+bspc config borderless_monocle false
+bspc config gapless_monocle false
+
+bspc config focus_follows_pointer true
+bspc config pointer_follows_focus false
+bspc config pointer_motion_interval 5
+bspc config pointer_modifier mod4
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_side
+bspc config pointer_action3 resize_corner
+
+#bspc wm --adopt-orphans
+bspc rule -a scratch sticky=on state=floating focus=on
+bspc rule -a '*:lxappearance' state=floating center=true
+bspc rule -a Xarchiver state=floating center=true
+bspc rule -a Engrampa state=floating center=true
+bspc rule -a nm-applet state=floating center=true
+bspc rule -a Nm-connection-editor state=floating
+bspc rule -a Font-manager state=tiled desktop='^6'
+
+# Set system vars for polybar
+.SetSysVars
+
+# Terminate already running polybar, eww, picom, sxhkd and dunst instances
+processes=("picom" "polybar" "eww" "sxhkd" "dunst")
+
+for process in "${processes[@]}"; do
+  if pidof -q "$process"; then
+    pkill -9 -x "$process" > /dev/null; sleep 0.1
+  fi
+done
+
+# Load bars and/or eww widgets
+eww -c "$HOME"/.config/bspwm/ryan/src/eww daemon &
+polybar -q ryan-bar -c "$HOME"/.config/bspwm/ryan/config.ini &
+#eww -c "$HOME"/.config/bspwm/ryan/src/eww open bar &
+
+# Launch picom // If you have old hardware or encounter problems
+# uncomment the picom "--legacy-backends" line and comment the current one.
+picom --config "$HOME"/.config/bspwm/picom.conf &
+#picom --legacy-backends --config "$HOME"/.config/bspwm/picom.conf &
+
+# Launch dunst notification daemon
+dunst -conf "$HOME"/.config/bspwm/dunstrc &
+
+# Set random wallpaper for actual rice
+feh -z --no-fehbg --bg-fill "$HOME"/.config/bspwm/ryan/walls &
+
+# Reload sxhkd daemon
+sxhkd -c "$HOME"/.config/bspwm/sxhkdrc &
+
+# Launch polkit
+#/usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
+#/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+
+# Fix cursor
+xsetroot -cursor_name left_ptr &
+
+#clipboard
+#greenclip daemon &
+
+#Xresources
+xrdb merge "$HOME"/.Xresources &
+
+#conky
+#$HOME/.config/conky/Auva/start.sh &
+
+#redshift
+#redshift-gtk -l 3.597031:98.678513 -t 5700:3500 &
+
+#tail -F $HOME/.config/bspwm/rices/ryan/scripts/tray-status 2> /dev/null &
+
+#autolockscreen
+#xautolock -time 6 -locker "i3lock --clock --blur=sigma" && echo mem ? /sys/power/state
+
+#speedup pointer
+#xset r rate 220 60

@@ -1,0 +1,30 @@
+#!/bin/bash
+
+fg=c0caf5
+wrong=db4b4b
+highlight=565f89
+date=7aa2f7
+verify=9ece6a
+
+slowfade () {
+    dis=$(echo -n "$DISPLAY" | tr -c '[:alnum:]' _)
+    ifc='com.github.chjj.compton'
+    obj='/com/github/chjj/compton'
+    if [[ "$1" == "start" ]]; then
+        dbus-send --dest=$ifc.$dis \
+            $obj $ifc.opts_set string:fade_in_step double:0.02
+        dbus-send --dest=$ifc.$dis \
+            $obj $ifc.opts_set string:fade_out_step double:0.02
+    else
+        dbus-send --dest=$ifc.$dis \
+            $obj $ifc.opts_set string:fade_in_step double:0.1
+        dbus-send --dest=$ifc.$dis \
+            $obj $ifc.opts_set string:fade_out_step double:0.1
+    fi
+}
+
+pkill -u "$USER" -USR1 dunst
+slowfade start
+mpc pause
+i3lock -n --force-clock -i ~/.config/bspwm/ryan/walls -e --indicator --radius=20 --ring-width=40 --inside-color=$fg --ring-color=$fg --insidever-color=$verify --ringver-color=$verify --insidewrong-color=$wrong --ringwrong-color=$wrong --line-uses-inside --keyhl-color=$verify --separator-color=$verify --bshl-color=$verify --time-str="%H:%M" --time-size=100 --date-str="%a, %d %b" --date-size=40 --verif-text="Verifying Password..." --wrong-text="Wrong Password!" --noinput-text="" --greeter-text="Type the password to Unlock" --ind-pos="160:600" --time-font="Roboto:style=Bold" --date-font="Roboto" --verif-font="Roboto" --greeter-font="Roboto" --wrong-font="Roboto" --verif-size=16 --greeter-size=16 --wrong-size=16 --time-pos="160:190" --date-pos="160:250" --greeter-pos="160:400" --wrong-pos="160:500" --verif-pos="160:450" --date-color=$date --time-color=$date --greeter-color=$fg --wrong-color=$wrong --verif-color=$verify --verif-pos="160:470" --pointer=default --refresh-rate=0 --pass-media-keys --pass-volume-keys
+slowfade end 

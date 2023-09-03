@@ -1,0 +1,27 @@
+#!/bin/bash
+
+FOCUSED_DESKTOP=$(bspc query -D -d focused --names)
+LAYOUT=$(bsp-layout get $FOCUSED_DESKTOP)
+
+case $1 in
+"--icon")
+	if [[ $LAYOUT = "rtall" ]]; then
+		echo "a"
+	elif [[ $LAYOUT = "grid" ]]; then
+		echo "b"
+	elif [[ $LAYOUT = "tiled" ]]; then
+		echo "c"
+	elif [[ $LAYOUT = "wide" ]]; then
+		echo "c"
+	fi
+	;;
+"--set")
+	bsp-layout next --layouts rtall,wide,grid,tiled --master-size 40 --desktop $FOCUSED_DESKTOP
+	;;
+"--reset")
+	bsp-layout set tiled $FOCUSED_DESKTOP
+	;;
+"--get")
+	echo "$(bsp-layout get)"
+	;;
+esac

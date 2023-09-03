@@ -1,0 +1,310 @@
+.actions {
+  background-color: $bg;
+  border-radius: 16px;
+  color: $fg;
+  font-family: Product Sans;
+  padding: 10px 18px;
+}
+
+.controlsbox {
+  background-color: $contrastbg;
+  border-radius: 7px;
+  padding: 7px 12px;
+
+  .vol-slider {
+    .vol-label {
+      font-size: 19px;
+      font-family: Iosevka Nerd Font;
+      margin-right: 15px;
+      color: $bluegray;
+    }
+    & scale trough {
+      all: unset;
+      border-radius: 10px;
+      background-color: $black;
+      border: none;
+      min-height: 8px;
+      min-width: 250px;
+      margin-left: 3px;
+      & highlight {
+        all: unset;
+        background: linear-gradient(to right, $bluegray, $blue);
+        color: #000000;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .br-slider {
+    .br-label {
+      font-size: 17px;
+      font-family: Iosevka Nerd Font;
+      margin-right: 15px;
+      color: $orange;
+    }
+    & scale trough {
+      all: unset;
+      border-radius: 10px;
+      background-color: $black;
+      border: none;
+      min-height: 8px;
+      min-width: 250px;
+      margin-left: 3px;
+      & highlight {
+        all: unset;
+        background: linear-gradient(to right, $orange, $red);
+        color: #000000;
+        border-radius: 10px;
+      }
+    }
+  }
+  .br-mic {
+    .mic-label {
+      font-size: 20px;
+      font-family: Iosevka Nerd Font;
+      margin-right: 12px;
+      color: $purple;
+    }
+    & scale trough {
+      all: unset;
+      border-radius: 10px;
+      background-color: $black;
+      border: none;
+      min-height: 8px;
+      min-width: 250px;
+      margin-left: 3px;
+      & highlight {
+        all: unset;
+        background: linear-gradient(to right, $purple, $magenta);
+        color: #000000;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+.userinfobox {
+  .time {
+    font-size: 42px;
+  }
+  .pfp {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    min-width: 42px;
+    min-height: 42px;
+  }
+  .daybox {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+  .user {
+    margin-top: 5px;
+    font-size: 10px;
+  }
+  .username {
+    font-family: Product Sans;
+  }
+  .useractions {
+    .logout {
+      background-color: $black;
+      font-family: Iosevka Nerd Font;
+      font-size: 18px;
+      padding: 2px 12px 2px 7px;
+      border-radius: 4px;
+      transition: all ease .2s;
+      &:hover { background-color: $dimblack; }
+      &:active { background-color: $black; }
+    }
+  }
+}
+
+.sysbuttonsbox {
+  .block-container {
+    .block {
+      background-color: $contrastbg;
+      padding: 0px 6px;
+      border-radius: 50px;
+      transition: all ease .2s;
+      color: $putih;
+      &:hover { background-color: $bgSecondary; }
+      &:active { background-color: $contrastbg; }
+      &.active {
+        background-color: $bluegray;
+        &:hover { background-color: $dimblack; }
+        &:active { background-color: $black; }
+        .sepbox .sep {
+          background-color: $lightblack;
+        }
+      }
+      .iconbox .icon {
+        font-family: Iosevka Nerd Font;
+        font-size: 16px;
+        padding: 7px 17px 7px 8px;
+      }
+      .sepbox .sep {
+        background-color: $black;
+        margin: 0px 4px;
+        padding: 0px 1px;
+      }
+      .chevronbox {
+        font-family: Iosevka Nerd Font;
+        padding: 0px 12px;
+      }
+    }
+    .label {
+      font-family: Product Sans;
+      font-size: 14px;
+    }
+  }
+}
+
+.poweractionsbox {
+  .info {
+    font-size: 14px;
+  }
+  .buttons {
+    font-family: Iosevka Nerd Font;
+    font-size: 18px;
+    button {
+      padding: 0px 6px 0px 6px;
+      background-color: $bgSecondary;
+      border-radius: 100px;
+      transition: all ease .2s;
+      &:hover { background-color: $bgSecondaryAlt; }
+      &:active { background-color: $bg; }
+      &.browser { color: $red; }
+      &.filemanager { color: $orange; }
+      &.terminal { color: $kuning; }
+      &.texteditor { color: $blue; }
+      &.musik { color: $green; }
+      &.telegram { color: $purple; }
+    }
+  }
+}
+
+.box {
+  .info {
+    font-size: 14px;
+  }
+  .buton {
+    font-family: Product Sans;
+    font-size: 14px;
+   .user {
+    margin-top: 5px;
+    font-size: 10px;
+  }
+  .username {
+    font-family: Product Sans;
+  } 
+  }
+}
+
+.musicaction { 
+ background-color: $contrastbg;
+ border-radius: 7px;
+  .pic-con {
+   padding: 10px;
+    .picimg {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      min-height: 100px; 
+      min-width: 240px;
+      border-radius: 7px;
+    }
+    .left {
+            font-family: Product Sans;
+            .song {
+              font-weight: bolder;
+            }
+            .artist {
+              color: $bluegray;
+            }}
+    }
+  .lasttmo {
+          padding: 0px 7px;
+          background-color: $contrastbg;
+          color: $bluegray;
+          border-radius: 7px;
+  .musiccontrol {
+            font-size: 23px;
+            font-family: Iosevka Nerd Font;
+            button {
+              transition: all ease .2s;
+              border-radius: 25px;
+              &:hover { background-color: $lightblack; }
+              &:active { background-color: transparent; }
+              &.next, &.back { padding: 8px 12px 8px 12px; }
+              &.playpause {
+                font-size: 20px;
+                padding: 8px 12px 8px 12px;
+                }
+              }
+          }
+       }
+    }
+}
+
+.stats-icon-cpu,
+.stats-icon-ram,
+.stats-icon-fs,
+.stats-icon-temp{
+  font-size: 19px;
+      font-family: Iosevka Nerd Font;
+      margin-right: 15px;
+}
+
+.stats-icon-cpu {
+  color: $red2;
+}
+
+.stats-icon-ram {
+  color: $green2;
+}
+
+.stats-icon-fs {
+  color: $purple2;
+}
+
+.stats-icon-temp {
+  color: $blue;
+}
+
+.scale-cpu,
+.scale-ram,
+.scale-fs,
+.scale-temp,
+scale trough {
+  all: unset;
+  background-color: $black;
+  border-radius: 10px;
+  min-height: 8px;
+  min-width: 250px;
+  margin-left: 10px;
+}
+
+.scale-cpu,
+.scale-ram,
+.scale-fs,
+.scale-temp,
+scale trough highlight {
+  all: unset;
+  border-radius: 10px;
+}
+.scale-cpu trough highlight {
+  background: linear-gradient(to right, $red2, $red);
+}
+
+.scale-ram trough highlight {
+  background: linear-gradient(to right, $green2, $green);
+}
+
+.scale-fs trough highlight {
+  background: linear-gradient(to right, $purple2, $magenta);
+}
+
+.scale-temp trough highlight {
+  background: linear-gradient(to right, $blue, $cyan);
+}

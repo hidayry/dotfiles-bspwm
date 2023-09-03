@@ -1,0 +1,194 @@
+(defwidget launcher []
+  (button :class "launcherbox"
+          :onclick "openapps --launcher"
+    (box :class "content"
+         :orientation "h"
+         :space-evenly false
+      (label :text "" :class "icon")
+      (label :text "Search..." :class "placeholder")
+    )
+  )
+)
+
+(defwidget update []
+  (button :class "update"
+          :onrightclick "openapps --update"
+          :onclick "openapps --checkupdates"
+    (box :class "suupdate"
+          :orientation "h"
+          :space-evenly false
+      (label :text " Up!!!" :class "iconss")
+      get_updates
+    )
+  )
+)
+
+(defwidget clip []
+  (button :class "clipboard"
+          :onclick "openapps --clip"
+          :tooltip "clipboard"
+    ""
+  )
+)
+
+;(defwidget widget []
+;  (button :class "widget"
+;          :onclick "eww -c ~/.config/bspwm/ryan/src/eww open --toggle dashboard"
+;    ""
+;  )
+;)
+
+
+(defwidget tray []
+  (button :class "tray"
+          :onclick "~/.config/bspwm/ryan/scripts/tray --toggle"
+          :tooltip "system tray"
+    ""
+  )
+)
+
+(defwidget kill []
+  (button :style "background-image: url('/home/ryan/.config/bspwm/assets/closew.svg');"
+  			  :class "trayicon"
+          :onclick "bspc node -k"
+          :tooltip "close app"
+  )
+)
+
+(defwidget full []
+  (button :style "background-image: url('/home/ryan/.config/bspwm/assets/fullscreen.svg');"
+  			  :class "trayicon" 
+          :onclick "buttonmin.sh"
+          :tooltip "tiled"
+  )
+)
+
+;(defwidget small []
+;  (button :style "background-image: url('/home/ryan/.config/bspwm/assets/floating.svg');"
+;  			  :class "trayicon"          
+;  	      :onclick "bspc node -t pseudo_tiled"
+;          :tooltip "floating screen"
+;  )
+;)
+
+(defwidget workspaces []
+  (box :class "workspacesbox"
+       :orientation "h"
+       :space-evenly false
+       :valign "center"
+    (literal :content "${workspaces}")
+  )
+)
+
+(defwidget bardate []
+  (box :class "bardatebox"
+       :orientation "h"
+       :space-evenly true
+    (button :onclick "eww -c ~/.config/bspwm/ryan/src/eww open --toggle date" timeku)
+  )
+)
+
+(defwidget powerbutton []
+  (button :class "powerbutton"
+          :onclick "eww -c ~/.config/bspwm/ryan/src/eww open-many --toggle powermenu-clickhandler powermenu"
+    "⏻"
+  )
+)
+
+(defwidget actionsbox []
+  (button :class "actionsbox" :onclick "eww -c ~/.config/bspwm/ryan/src/eww open --toggle actions"
+                  :onrightclick "networkmanager_dmenu"
+    (box :orientation "h"
+        :space-evenly false
+        :spacing 13
+        :border-radius 18
+      ; margin are used to fix issues with nerd fonts widths :/
+      (label :text "${network_icon}" :style "margin-right: ${network_status == 'Connected' ? '3px' : '0px'};")
+      (label :text "${network_radio == 'on' ? '' : ''}")
+      (label :text "${volume_icon}" :style "margin-right: 3px;")
+      (label :text "${bluetooth_state == 'on' ? '' : ''}")
+      (label :text "${mic_status == 'yes' ? '' : ''}" :style "margin-left: -2px;")
+    )
+  )
+)
+
+(defwidget left []
+  (box :class "left"
+       :orientation "h"
+       :space-evenly false
+       :halign "start"
+    ;(widget)
+    (launcher)
+    (workspaces)
+    ;(windowtitle)
+  )
+)
+
+(defwidget center []
+  (box :class "center"
+       :orientation "h"
+       :space-evenly false
+       :halign "center"
+    (bardate)
+  )
+)
+
+(defwidget right []
+  (box :class "right"
+       :orientation "h"
+       :space-evenly false
+       :halign "end"
+    ;(searchbutton)
+    (full)
+    ;(small)
+    (kill)
+    (tray)
+    (clip)
+    (update)
+    (actionsbox)
+    (powerbutton)
+  )
+)
+
+(defwidget bar []
+  (box :class "bar"
+       :orientation "h"
+       :space-evenly true
+    (left)
+    (center)
+    (right)
+  )
+)
+
+(defwindow bar
+  :geometry (geometry :x "0px"
+                      :y "4px"
+                      :width "96%"
+                      :height "25px"
+                      :anchor "center top")
+  :windowtype "dock"
+  :wm-ignore false
+  :reserve (struts :distance "40px" :side "top")
+(bar))
+
+;(defwidget windowtitle []
+;	(label
+;		:class "windowtitle"
+;		:limit-width 21
+;		:text windowtitle
+;	)
+;)
+
+
+;(defwidget searchbutton []
+;  (button :class "searchbutton"
+;          :tooltip "Search Applications"
+;          :onclick "~/.config/bspwm/ryan/src/eww/scripts/exec rofi -show drun"
+;    (box :class "content"
+;         :orientation "h"
+;         :space-evenly false
+;      (label :text "" :class "icon")
+;      (label :text "Search..." :class "placeholder")
+;    )
+;  )
+;)

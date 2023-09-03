@@ -1,0 +1,25 @@
+@icon,,18,17,16,16,0,left,top,#7AA2F7,#7AA2F7,/home/ryan/.config/jgmenu/MenuIcons/search.png
+@search,,42,15,150,20,2,left,top,#c0caf5,#7aa2f7,Search
+Terminal,alacritty,/home/ryan/.config/jgmenu/MenuIcons/terminal.png
+Web Browser,firefox,/home/ryan/.config/jgmenu/MenuIcons/web-browser.png
+File manager,thunar,/home/ryan/.config/jgmenu/MenuIcons/file-manager.png
+Text Editor,geany,/home/ryan/.config/jgmenu/MenuIcons/edit-note.png
+Music Player,mpd; alacritty -e 'ncmpcpp',/home/ryan/.config/jgmenu/MenuIcons/music.png
+
+^sep()
+Applications,^checkout(lx-apps),/home/ryan/.config/jgmenu/MenuIcons/applications.png
+#Info center,eww open-many --toggle background-closer dashboard,/home/ryan/.config/jgmenu/MenuIcons/dashboard.png
+#Tentang,OpenApps --fetch,/home/ryan/.config/jgmenu/MenuIcons/system-menu.png
+^sep()
+PowerMenu , eww -c ~/.config/bspwm/ryan/src/eww open-many --toggle powermenu-clickhandler powermenu,/home/ryan/.config/jgmenu/MenuIcons/system-menu.png
+BSPWM,^checkout(bspwm),/home/ryan/.config/jgmenu/MenuIcons/bspwm.png
+#DWM,^checkout(dwm),/home/ryan/.config/jgmenu/MenuIcons/dwm.png
+#^tag(dwm)
+#Restart, kill -HUP dwmpid, /home/ryan/.config/jgmenu/MenuIcons/restartdwm.png
+#Exit, killall dwm, /home/ryan/.config/jgmenu/MenuIcons/exitdwm.png
+
+^tag(bspwm)
+Restart, bspc wm -r, /home/ryan/.config/jgmenu/MenuIcons/restart.png
+Exit, bspc quit, /home/ryan/.config/jgmenu/MenuIcons/exit.png
+
+^tag(lx-apps)

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Fetch
+Icon=~/.config/bspwm/assets/ryan.png
+Terminal=false
+Exec=openapps --fetch
+#Exec=termite --hold -e zfetch

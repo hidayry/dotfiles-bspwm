@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if ! updates_arch=$(checkupdates 2>/dev/null | wc -l); then
+  updates_arch=0
+fi
+
+if ! updates_aur=$(yay -Qum 2>/dev/null | wc -l); then
+  updates_aur=0
+fi
+
+updates=$((updates_arch + updates_aur))
+
+case "$1" in
+--up)
+  if [ "$updates" -gt 0 ]; then
+    bspc rule -a \* -o state=floating && alacritty -e $SHELL -c 'yay -Syu'
+  fi
+  ;;
+--get)
+  echo "$updates"
+  ;;
+esac

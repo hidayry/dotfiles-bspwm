@@ -1,0 +1,11 @@
+#!/bin/bash
+
+open_updates() {
+	$HOME/.config/bspwm/rices/ryan/src/eww/scripts/updates up
+}
+
+case $1 in
+--updates)
+	open_updates
+	;;
+esac
