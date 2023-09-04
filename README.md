@@ -1,6 +1,17 @@
 # dotfiles-bspwm | For Debian 12
 
-## information
+<div align=center>
+
+<a href="https://github.com/baskerville/bspwm"><img alt="bspWM Logo" height="150" src="https://i.imgur.com/gWtor5d.png"></a>
+
+<div align="center">
+    <img src ="https://img.shields.io/badge/BSP-WM-blue?style=for-the-badge&logo=bspwm&logoColor=green&color="/>
+    <img src ="https://img.shields.io/badge/Debian-12-green?style=for-the-badge&logo=Debian&logoColor=red&color=blue"/>
+</div>
+
+</div>
+
+## 📃 Information
 
 This Dotfiles use [Polybar](https://github.com/polybar/polybar) and [EWW/ElKowars wacky widgets](https://github.com/elkowar/eww) as bar. You can change the bar using Polybar or EWW.
 
@@ -22,7 +33,7 @@ This Dotfiles use [Polybar](https://github.com/polybar/polybar) and [EWW/ElKowar
 
 <br>
 
-## Some Keyboard Shortcuts to know
+## ⌨️ Some Keyboard Shortcuts to know
 
 - <code>super + space</code> Launcher Menu.
 - <code>print</code> Takes Screenshot.
@@ -35,7 +46,7 @@ This Dotfiles use [Polybar](https://github.com/polybar/polybar) and [EWW/ElKowar
 
 And more..
 
-## Screenshoot
+## 🌿 Screenshoot
 
 - <code>use eww bar</code>
 ![eww1](https://github.com/hidayry/dotfiles-bspwm/blob/main/ss/eww_bar2.png?raw=true)
@@ -49,13 +60,13 @@ And more..
 - <code>rofi launcher</code>
 ![launcher](https://github.com/hidayry/dotfiles-bspwm/blob/main/ss/launcher.png?raw=true)
 
-# Setup
+# 🛠️ Setup
 
 - <b>First clone the repository</b>
 
 <b>Copy config :</b>
 
-- **WARNING: Configuration files may be overrided,please backup your config**
+- ** ⚠️ WARNING: Configuration files may be overrided,please backup your config**
 
 ```sh
 cd dotfiles-bspwm
