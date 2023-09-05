@@ -131,7 +131,7 @@ systemctl --user enable mpd
 
 **For Themes and icons :**
 
-- [Material-GTK-Themes](https://github.com/Fausto-Korpsvart/Material-GTK-ThemMaterial-GTK-Themeses)
+- [Material-GTK-Themes](https://github.com/Fausto-Korpsvart/Material-GTK-Themes)
 
 - [TokyoNight](https://github.com/ljmill/tokyo-night-icons)
 
