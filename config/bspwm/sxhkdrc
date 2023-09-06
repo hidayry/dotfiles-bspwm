@@ -39,6 +39,9 @@ shift + alt + {b,g,n,p,r,t,w,m,v,k}
 	 openapps --nvim, \
 	 openapps --music}
 
+# Hide/Show Bar (Polybar and/or eww)
+super + {h,u}
+	HideBar {-h,-u}
 
 # Change transparency on focused window
 ctrl + alt {minus,plus,t}
@@ -46,15 +49,7 @@ ctrl + alt {minus,plus,t}
 
 # Screenshot Now
 Print
-	ScreenShoTer --now
-
-# Screenshot Select
-ctrl + Print
-	ScreenShoTer --sel
-
-# Screenshot in 10s
-alt + Print
-	ScreenShoTer --in10
+	ss
 
 # Reload sxhkd
 super + Escape
@@ -117,7 +112,7 @@ super + button{4,5}
 # Global window gaps scroll
 super + alt + button{4,5}
 	bspc config window_gap $(( $(bspc config window_gap) {-,+} 5 ))
-https://astronvim.com/
+
 # focus the node in the given direction
 super + {_,shift + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}

@@ -37,7 +37,6 @@ This Dotfiles use [Polybar](https://github.com/polybar/polybar) and [EWW/ElKowar
 
 - <code>super + space</code> Launcher Menu.
 - <code>print</code> Takes Screenshot.
-- <code>ctrl + print</code> Selected Screenshot.
 - <code>super + return</code> Open a terminal.
 - <code>super + alt + Return</code> Open a floating terminal.
 - <code>alt + c</code> Color Picker.
@@ -59,6 +58,10 @@ And more..
 
 - <code>rofi launcher</code>
 ![](./ss/launcher.png)
+
+- <code>Screenshoot</code>
+![](./ss/ss.png)
+
 
 # 🛠️ Setup
 
