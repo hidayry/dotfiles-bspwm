@@ -17,7 +17,7 @@
     )
     (button :class "suspend"
             :onclick "systemctl suspend"
-      (label :text "望" :class "content")
+      (label :text "鈴" :class "content")
     )
     (button :class "lock"
 		  :onclick "~/.config/bspwm/ryan/scripts/lock"
