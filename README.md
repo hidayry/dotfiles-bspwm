@@ -45,7 +45,7 @@ This Dotfiles use [Polybar](https://github.com/polybar/polybar) and [EWW/ElKowar
 
 And more..
 
-## 🌿 Screenshoot
+## 🌿 Gallery
 
 - <code>use eww bar</code>
 ![](./ss/eww_bar2.png)
