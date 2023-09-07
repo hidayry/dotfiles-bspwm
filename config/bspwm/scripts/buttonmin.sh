@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# by github : https://github.com/hidayry/dotfiles-bspwm
+
 current_state=$(bspc query -N -n focused.tiled)
 
 if [ -z "$current_state" ]; then

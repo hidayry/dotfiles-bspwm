@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# by github : https://github.com/hidayry/dotfiles-bspwm
+
 get_total_updates() {
   local total_updates=$(apt-get upgrade -s |grep -P '^\d+ upgraded'|cut -d" " -f1 || echo 0)
   echo "${total_updates:-0}"

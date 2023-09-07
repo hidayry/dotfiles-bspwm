@@ -1,3 +1,5 @@
+/** Modification by github : https://github.com/hidayry/dotfiles-bspwm **/
+
 configuration{
     modi: "run,drun,window";
     lines: 5;

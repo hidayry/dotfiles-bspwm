@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# by github : https://github.com/hidayry/dotfiles-bspwm
+
 time=$(date +%Y-%m-%d-%I-%M-%S)
 geometry=$(xrandr | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current')
 dir="$(xdg-user-dir PICTURES)/ScreenShots"
