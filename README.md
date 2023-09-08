@@ -18,9 +18,7 @@
 - [Keyboard](#⌨️-some-keyboard-shortcuts-to-know)
 - [Setup](#🛠️-setup)
 
-<a name="information"></a>
-
-## 📃 Information ##
+## 📃 Information
 
 This Dotfiles use [Polybar](https://github.com/polybar/polybar) and [EWW/ElKowars wacky widgets](https://github.com/elkowar/eww) as bar. You can change the bar using Polybar or EWW.
 
@@ -40,8 +38,6 @@ This Dotfiles use [Polybar](https://github.com/polybar/polybar) and [EWW/ElKowar
 | File Manager |                                     Thunar                                     |
 | Notification |                                     Dunst                                      |
 
-
-<a name="keyboard"></a>
 ## ⌨️ Some Keyboard Shortcuts to know ##
 
 - <code>super + space</code> Launcher Menu.
@@ -53,8 +49,6 @@ This Dotfiles use [Polybar](https://github.com/polybar/polybar) and [EWW/ElKowar
 - <code>super + alt + r</code> Restart bspwm.
 
 And more..
-
-<a name="gallery"></a>
 
 ## 🌿 Gallery ##
 
@@ -73,9 +67,7 @@ And more..
 - <code>Screenshoot</code>
 ![](./ss/ss.png)
 
-<a name="setup"></a>
-
-## 🛠️ Setup  ##
+## 🛠️ Setup ##
 
 1.- **First clone the repository**
 
