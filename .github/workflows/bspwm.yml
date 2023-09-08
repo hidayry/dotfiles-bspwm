@@ -1,0 +1,28 @@
+name: Sync to GitLab and Codeberg
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Push to GitLab
+        env:
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+        run: |
+          git remote add gitlab https://gitlab.com/hidayry/dotfiles-bspwm.git
+          git push gitlab main
+
+      - name: Push to Codeberg
+        env:
+          CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
+        run: |
+          git remote add codeberg https://codeberg.org/hidayry/dotfiles-bspwm.git
+          git push codeberg main
