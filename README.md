@@ -11,13 +11,6 @@
 
 </div>
 
-## ✨ Contents ##
-
-- [Information](#📃-information)
-- [Gallery](#🌿-gallery)
-- [Keyboard](#⌨️-some-keyboard-shortcuts-to-know)
-- [Setup](#🛠️-setup)
-
 ## 📃 Information
 
 This Dotfiles use [Polybar](https://github.com/polybar/polybar) and [EWW/ElKowars wacky widgets](https://github.com/elkowar/eww) as bar. You can change the bar using Polybar or EWW.
@@ -38,7 +31,7 @@ This Dotfiles use [Polybar](https://github.com/polybar/polybar) and [EWW/ElKowar
 | File Manager |                                     Thunar                                     |
 | Notification |                                     Dunst                                      |
 
-## ⌨️ Some Keyboard Shortcuts to know ##
+## ⌨️ Some Keyboard Shortcuts to know
 
 - <code>super + space</code> Launcher Menu.
 - <code>print</code> Takes Screenshot.
@@ -50,7 +43,7 @@ This Dotfiles use [Polybar](https://github.com/polybar/polybar) and [EWW/ElKowar
 
 And more..
 
-## 🌿 Gallery ##
+## 🌿 Gallery
 
 - <code>use eww bar</code>
 ![](./ss/eww_bar2.png)
@@ -67,7 +60,7 @@ And more..
 - <code>Screenshoot</code>
 ![](./ss/ss.png)
 
-## 🛠️ Setup ##
+## 🛠️ Setup
 
 1.- **First clone the repository**
 
