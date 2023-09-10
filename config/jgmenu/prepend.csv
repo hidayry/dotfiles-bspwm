@@ -8,8 +8,6 @@ Music Player,mpd; alacritty -e 'ncmpcpp',/home/ryan/.config/jgmenu/MenuIcons/mus
 
 ^sep()
 Applications,^checkout(lx-apps),/home/ryan/.config/jgmenu/MenuIcons/applications.png
-#Info center,eww open-many --toggle background-closer dashboard,/home/ryan/.config/jgmenu/MenuIcons/dashboard.png
-#Tentang,OpenApps --fetch,/home/ryan/.config/jgmenu/MenuIcons/system-menu.png
 ^sep()
 PowerMenu , eww -c ~/.config/bspwm/ryan/src/eww open-many --toggle powermenu-clickhandler powermenu,/home/ryan/.config/jgmenu/MenuIcons/system-menu.png
 BSPWM,^checkout(bspwm),/home/ryan/.config/jgmenu/MenuIcons/bspwm.png
