@@ -43,24 +43,24 @@ This Dotfiles use [Polybar](https://github.com/polybar/polybar) and [EWW/ElKowar
 
 And more..
 
-## 🌿 Gallery
+## 🖼️ Gallery
 
 - <code>use eww bar</code>
-![](./ss/eww_bar2.png)
+  ![](./ss/eww_bar2.png)
 
 - <code>use eww with neofetch</code>
-![](./ss/eww_bar.png)
+  ![](./ss/eww_bar.png)
 
 - <code>use polybar</code>
-![](./ss/polybar_bar.png)
+  ![](./ss/polybar_bar.png)
 
 - <code>rofi launcher</code>
-![](./ss/launcher.png)
+  ![](./ss/launcher.png)
 
 - <code>Screenshoot</code>
-![](./ss/ss.png)
+  ![](./ss/ss.png)
 
-## 🛠️ Setup
+## 🔥 Setup
 
 1.- **First clone the repository**
 
@@ -116,7 +116,8 @@ eww -c "$HOME"/.config/bspwm/ryan/src/eww open bar &
 systemctl --user enable mpd
 ```
 
-***
+---
+
 **For other you can build from sources :**
 
 - [I3lock-Color](https://github.com/Raymo111/i3lock-color)
