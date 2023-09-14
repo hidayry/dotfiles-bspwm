@@ -126,11 +126,31 @@ systemctl --user enable mpd
 
 - [Bsp-layout](https://github.com/phenax/bsp-layout)
 
+```sh
+curl https://raw.githubusercontent.com/phenax/bsp-layout/master/install.sh | bash -;
+```
+
 - [Rofi-greenclip](https://github.com/erebe/greenclip)
+
+```sh
+wget https://github.com/erebe/greenclip/releases/download/v4.2/greenclip
+sudo mv greenclip /usr/bin/
+sudo chmod +x /usr/bin/greenclip
+```
 
 - [Tdrop](https://github.com/noctuid/tdrop)
 
+```sh
+git clone https://github.com/noctuid/tdrop.git
+cd tdrop
+sudo make install
+```
+
 - [Xqp](https://github.com/baskerville/xqp)
+
+```sh
+extract xqp form folder app and move folder "usr" to /
+```
 
 **For Themes and icons :**
 
