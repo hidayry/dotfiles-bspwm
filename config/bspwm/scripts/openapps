@@ -81,7 +81,7 @@ case "$1" in
     ;;
     
     --browser)
-        firefox-esr
+        microsoft-edge-stable
     ;;
     
     --editor)
