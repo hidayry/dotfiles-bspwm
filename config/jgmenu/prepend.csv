@@ -1,7 +1,7 @@
 @icon,,18,17,16,16,0,left,top,#7AA2F7,#7AA2F7,/home/ryan/.config/jgmenu/MenuIcons/search.png
 @search,,42,15,150,20,2,left,top,#c0caf5,#7aa2f7,Search
 Terminal,st,/home/ryan/.config/jgmenu/MenuIcons/terminal.png
-Web Browser,microsoft-edge-stable,/home/ryan/.config/jgmenu/MenuIcons/web-browser.png
+Web Browser,firefox,/home/ryan/.config/jgmenu/MenuIcons/web-browser.png
 File manager,thunar,/home/ryan/.config/jgmenu/MenuIcons/file-manager.png
 Text Editor,codium,/home/ryan/.config/jgmenu/MenuIcons/edit-note.png
 Music Player,mpd; alacritty -e 'ncmpcpp',/home/ryan/.config/jgmenu/MenuIcons/music.png
