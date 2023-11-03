@@ -1,12 +1,13 @@
 #!/bin/sh
 
-export QT_QPA_PLATFORMTHEME=qt5ct
-export PATH="$HOME/.config/bspwm/scripts:$PATH"
-xset r rate 200 50 &
-/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
-greenclip daemon &
-xautolock -time 10 -locker "~/.config/bspwm/scripts/lock" && echo mem ? /sys/power/state &
-#while type dwm >/dev/null; do dwm && continue || break; done
+#export QT_QPA_PLATFORMTHEME=qt5ct
+#export PATH="$HOME/.config/bspwm/scripts:$PATH"
+#xset r rate 200 50 &
+#/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+#greenclip daemon &
+#mpd &
+#mpDris2 &
+#xautolock -time 10 -locker "$HOME/.config/bspwm/scripts/lock" && echo mem ? /sys/power/state &
 
 case $session in
 awesome)

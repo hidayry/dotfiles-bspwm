@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-
+## path
+PATH="$HOME/.config/bspwm/scripts:$PATH"
 ## Fix java applications
 export _JAVA_AWT_WM_NONREPARENTING=1
 
@@ -63,7 +64,7 @@ done
 # Load bars and/or eww widgets
 eww -c "$HOME"/.config/bspwm/ryan/src/eww daemon &
 polybar -q ryan-bar -c "$HOME"/.config/bspwm/ryan/config.ini &
-#eww -c "$HOME"/.config/bspwm/ryan/src/eww open bar &
+#eww --config "$HOME"/.config/bspwm/ryan/src/eww open bar & 
 
 # Launch picom // If you have old hardware or encounter problems
 # uncomment the picom "--legacy-backends" line and comment the current one.
@@ -81,13 +82,13 @@ sxhkd -c "$HOME"/.config/bspwm/sxhkdrc &
 
 # Launch polkit
 #/usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
-#/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 
 # Fix cursor
 xsetroot -cursor_name left_ptr &
 
 #clipboard
-#greenclip daemon &
+greenclip daemon &
 
 #Xresources
 xrdb merge "$HOME"/.Xresources &
@@ -101,7 +102,11 @@ xrdb merge "$HOME"/.Xresources &
 #tail -F $HOME/.config/bspwm/rices/ryan/scripts/tray-status 2> /dev/null &
 
 #autolockscreen
-#xautolock -time 6 -locker "i3lock --clock --blur=sigma" && echo mem ? /sys/power/state
+xautolock -time 10 -locker "$HOME/.config/bspwm/scripts/lock" && echo mem ? /sys/power/state &
 
 #speedup pointer
-#xset r rate 220 60
+xset r rate 220 50 &
+
+#music
+mpd &
+mpDris2
