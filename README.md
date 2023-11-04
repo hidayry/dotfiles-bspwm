@@ -112,12 +112,6 @@ eww -c "$HOME"/.config/bspwm/ryan/src/eww open bar &
 ~/.config/bspwm/bspwmrc
 ```
 
-- **Run MPD**
-
-```sh
-systemctl --user enable mpd
-```
-
 ---
 
 **For other you can build from sources :**
@@ -148,8 +142,14 @@ sudo make install
 
 - [Xqp](https://github.com/baskerville/xqp)
 
-```sh
 extract xqp form folder app and move folder "usr" to /
+
+or
+
+```sh
+git clone https://github.com/baskerville/xqp.git
+cd xqp
+sudo make install
 ```
 
 **For Themes and icons :**
